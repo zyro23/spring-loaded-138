@@ -23,9 +23,6 @@ apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.grails-gsp"
 apply plugin:"asset-pipeline"
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = sourceCompatibility
-
 ext {
     grailsVersion = project.grailsVersion
     gradleWrapperVersion = project.gradleWrapperVersion
@@ -74,12 +71,4 @@ task wrapper(type: Wrapper) {
 assets {
     minifyJs = true
     minifyCss = true
-}
-
-bootRun {
-	systemProperties System.properties
-}
-
-grails.agent {
-	inclusions += ",javax.money..*"
 }
